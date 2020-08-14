@@ -9,7 +9,8 @@ export default ({ registry = {}, slices, resolver = () => null }) => {
   }
 
   return slices.map((slice, i) => {
-    const sliceName = pascalize(slice.slice_type)
+    const slice_type = slice.slice_type
+    const sliceName = pascalize(slice_type)
     const maybeRegister = registry[sliceName]
 
     if (!maybeRegister) {
